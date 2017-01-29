@@ -19,7 +19,7 @@ $(document).ready(function(){
 		if(!$(this).prop('checked')){
 			activate_more_bugs();
 			clicks++;
-			
+			console.log(random_chance);
 			if(random_chance){
 				var new_bug = Math.floor(Math.random()*900) + 100;
 				

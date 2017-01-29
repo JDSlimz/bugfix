@@ -15,6 +15,13 @@ $(document).ready(function(){
 	$('.bug').change(function() {
 		clicks++;
 		
+		if(isPrime(clicks)){
+			var new_bug = Math.floor(Math.random()*900) + 100;
+			if(!jQuery.inArray(new_bug, bugs)){
+				console.log(new_bug);
+			}
+		}
+		
 		if(!$(this).prop('checked')){
 			activate_more_bugs();
 		}

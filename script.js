@@ -75,6 +75,9 @@ function isPrime(n) {
 }
 
 function random_chance(){
-	var randomNumber = Math.random() >= 0.5;
-	console.log(randomNumber);
+	var randomNumber = Math.floor(Math.random());
+	if(isPrime(randomNumber)){
+		console.log(randomNumber);
+	}
+	
 }

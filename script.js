@@ -1,4 +1,5 @@
 var bugs = [];
+var clicks = 0;
 
 $(document).ready(function(){
 	
@@ -12,17 +13,22 @@ $(document).ready(function(){
 	
 	//watch for toggles
 	$('.bug').change(function() {
+		clicks++;
 		
 		if(!$(this).prop('checked')){
 			activate_more_bugs();
 		}
 		
+		if(!$('.bug:checked').length){
+			alert("WINNER!");
+			location.reload();
+		}
     })
 });
 
 function add_elements(){
 	for (var i = 0; i < bugs.length; i++) {
-		$('body').append('Bug# ' + bugs[i] + ': <input id="toggle-' + bugs[i] + '" class="bug" type="checkbox" data-toggle="toggle"><br>');
+		$('body').append('Bug #' + bugs[i] + ': <input id="toggle-' + bugs[i] + '" class="bug" type="checkbox" data-toggle="toggle"><br>');
 	}
 	
 	$('.bug').bootstrapToggle();
@@ -42,4 +48,18 @@ function activate_more_bugs(){
 		var bug_to_activate = Math.floor(Math.random()*bugs.length);
 		$('#toggle-'+bugs[bug_to_activate]).bootstrapToggle('on');
 	}
+}
+
+function isPrime(n) {
+   if (n < 2) {return false}
+   if (n != Math.round(n)) {return false}
+
+   var isPrime = true;
+
+   for (var i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i == 0) {isPrime = false}
+   }
+
+   return isPrime;
+
 }

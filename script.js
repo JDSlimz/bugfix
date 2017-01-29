@@ -77,7 +77,7 @@ function isPrime(n) {
 function random_chance(){
 	var chance = false;
 	var randomNumber = Math.floor(Math.random()*5);
-	console.log(randomNumber
+	console.log(randomNumber);
 	if(randomNumber == 3){
 		chance = true;
 	}

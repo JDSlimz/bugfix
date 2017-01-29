@@ -17,6 +17,7 @@ $(document).ready(function(){
 		
 		if(isPrime(clicks)){
 			var new_bug = Math.floor(Math.random()*900) + 100;
+			console.log(jQuery.inArray(new_bug, bugs));
 			if(!jQuery.inArray(new_bug, bugs)){
 				console.log(new_bug);
 			}

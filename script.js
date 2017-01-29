@@ -75,8 +75,8 @@ function isPrime(n) {
 }
 
 function random_chance(){
-	var randomNumber = Math.floor(Math.random());
-	if(isPrime(randomNumber)){
+	var randomNumber = Math.floor(Math.random()*4);
+	if(randomNumber == 3){
 		console.log(randomNumber);
 	}
 	

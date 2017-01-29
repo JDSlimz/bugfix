@@ -10,8 +10,8 @@ $(document).ready(function(){
 });
 
 function add_elements(bugs){
-	var i = 0;
-	while(i < bugs.length){
+	for (var i = 0; i < bugs.length; i++) {
 		$('body').append('Bug# ' + bugs[i] + ': <input id="toggle-demo" type="checkbox" data-toggle="toggle">');
+		i++;
 	}
 }

@@ -15,4 +15,12 @@ function add_elements(bugs){
 	}
 	
 	$('.bug').bootstrapToggle();
+	
+	select_starting_bug(bugs);
+}
+
+function select_starting_bug(bugs){
+	var bug_index = Math.floor(Math.random()*bugs.length);
+	
+	jQuery('#toggle-'+bug_index).bootstrapToggle('on');
 }

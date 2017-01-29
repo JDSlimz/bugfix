@@ -20,7 +20,7 @@ $(document).ready(function(){
 			activate_more_bugs();
 			clicks++;
 			
-			if(random_chance()){
+			if(random_chance() && bugs.length < 16){
 				var new_bug = Math.floor(Math.random()*900) + 100;
 				
 				while(!jQuery.inArray(new_bug, bugs) == -1){

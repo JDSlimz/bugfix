@@ -36,13 +36,13 @@ function activate_more_bugs(not_to_activate){
 		
 		var bug_to_activate = Math.floor(Math.random()*bugs.length);
 		
+		console.log(bug_to_activate);
+		console.log(not_to_activate);
+		
 		while(bugs[bug_to_activate] == not_to_activate){
 			bug_to_activate = Math.floor(Math.random()*bugs.length);
 		}
 		$('#toggle-'+bugs[bug_to_activate]).bootstrapToggle('on');
-		
-		
-		console.log("Bug Number: "+bug_to_activate);
 	}
 }
 

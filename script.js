@@ -32,11 +32,10 @@ function select_starting_bug(){
 function activate_more_bugs(not_to_activate){
 	var num_to_activate = Math.floor(Math.random()*bugs.length/2);
 	
-	console.log("Number of bugs: "+num_to_activate);
-	
 	for(var i=0; i<num_to_activate; i++){
 		
 		var bug_to_activate = Math.floor(Math.random()*bugs.length);
+		
 		while(bugs[bug_to_activate] == not_to_activate){
 			bug_to_activate = Math.floor(Math.random()*bugs.length);
 		}

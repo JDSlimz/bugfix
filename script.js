@@ -27,6 +27,7 @@ $(document).ready(function(){
 					new_bug = Math.floor(Math.random()*900) + 100;
 				}
 				
+				bugs.push(new_bug);
 				$('body').append('Bug #' + new_bug + ': <input id="toggle-' + bugs[i] + '" class="bug" type="checkbox" data-toggle="toggle"><br>');
 				$('.bug').bootstrapToggle();
 			}

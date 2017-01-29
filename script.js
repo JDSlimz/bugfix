@@ -13,18 +13,20 @@ $(document).ready(function(){
 	
 	//watch for toggles
 	$('.bug').change(function() {
-		clicks++;
-		console.log(isPrime(clicks));
-		if(isPrime(clicks)){
-			var new_bug = Math.floor(Math.random()*900) + 100;
-			
-			while(!jQuery.inArray(new_bug, bugs) == -1){
-				console.log(new_bug);
-			}
-		}
+		
+		
 		
 		if(!$(this).prop('checked')){
 			activate_more_bugs();
+			clicks++;
+			console.log(isPrime(clicks));
+			if(isPrime(clicks)){
+				var new_bug = Math.floor(Math.random()*900) + 100;
+				
+				while(!jQuery.inArray(new_bug, bugs) == -1){
+					console.log(new_bug);
+				}
+			}
 		}
 		
 		if(!$('.bug:checked').length){

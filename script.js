@@ -81,5 +81,5 @@ function random_chance(){
 	if(randomNumber == 3){
 		chance = true;
 	}
-	return chancce;
+	return chance;
 }

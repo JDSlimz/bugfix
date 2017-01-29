@@ -19,13 +19,15 @@ $(document).ready(function(){
 		if(!$(this).prop('checked')){
 			activate_more_bugs();
 			clicks++;
-			console.log(random_chance());
+			
 			if(random_chance()){
 				var new_bug = Math.floor(Math.random()*900) + 100;
 				
 				while(!jQuery.inArray(new_bug, bugs) == -1){
-					console.log(new_bug);
+					new_bug = Math.floor(Math.random()*900) + 100;
 				}
+				
+				console.log(new_bug);
 			}
 		}
 		
@@ -77,7 +79,7 @@ function isPrime(n) {
 function random_chance(){
 	var chance = false;
 	var randomNumber = Math.floor(Math.random()*5);
-	console.log(randomNumber);
+
 	if(randomNumber == 3){
 		chance = true;
 	}

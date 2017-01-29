@@ -30,7 +30,7 @@ function select_starting_bug(){
 }
 
 function activate_more_bugs(not_to_activate){
-	var num_to_activate = Math.floor(Math.random()*bugs.length/2);
+	var num_to_activate = Math.floor(Math.random()*3);
 	
 	for(var i=0; i<num_to_activate; i++){
 		
@@ -62,7 +62,7 @@ function isPrime(n) {
 
 function random_chance(){
 	var chance = false;
-	var randomNumber = Math.floor(Math.random()*5);
+	var randomNumber = Math.floor(Math.random()*25);
 
 	if(randomNumber == 3){
 		chance = true;

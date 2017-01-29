@@ -29,13 +29,17 @@ function select_starting_bug(){
 	$('#toggle-'+bugs[bug_index]).bootstrapToggle('on');
 }
 
-function activate_more_bugs(){
+function activate_more_bugs(not_to_activate){
 	var num_to_activate = Math.floor(Math.random()*bugs.length/2);
 	
 	console.log("Number of bugs: "+num_to_activate);
 	
 	for(var i=0; i<num_to_activate; i++){
+		
 		var bug_to_activate = Math.floor(Math.random()*bugs.length);
+		while(bugs[bug_to_activate] == not_to_activate){
+			bug_to_activate = Math.floor(Math.random()*bugs.length);
+		}
 		$('#toggle-'+bugs[bug_to_activate]).bootstrapToggle('on');
 		
 		
@@ -72,7 +76,7 @@ function watch_for_toggles(){
 	$('.bug').change(function() {
 		
 		if(!$(this).prop('checked')){
-			activate_more_bugs();
+			activate_more_bugs(this.id);
 			clicks++;
 			
 			if(random_chance() && bugs.length < 16){

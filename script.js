@@ -11,8 +11,8 @@ $(document).ready(function(){
 
 function add_elements(bugs){
 	for (var i = 0; i < bugs.length; i++) {
-		$('body').append('Bug# ' + bugs[i] + ': <input id="toggle-' + bugs[i] + '" type="checkbox" data-toggle="toggle"><br>');
+		$('body').append('Bug# ' + bugs[i] + ': <input id="toggle-' + bugs[i] + '" class="bug" type="checkbox" data-toggle="toggle"><br>');
 	}
 	
-	$('#toggle-demo').bootstrapToggle();
+	$('.bug').bootstrapToggle();
 }

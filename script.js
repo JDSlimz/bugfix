@@ -19,8 +19,8 @@ $(document).ready(function(){
 		if(!$(this).prop('checked')){
 			activate_more_bugs();
 			clicks++;
-			console.log(random_chance);
-			if(random_chance){
+			console.log(random_chance());
+			if(random_chance()){
 				var new_bug = Math.floor(Math.random()*900) + 100;
 				
 				while(!jQuery.inArray(new_bug, bugs) == -1){

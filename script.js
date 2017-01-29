@@ -19,8 +19,8 @@ $(document).ready(function(){
 		if(!$(this).prop('checked')){
 			activate_more_bugs();
 			clicks++;
-			console.log(isPrime(clicks));
-			if(isPrime(clicks)){
+			
+			if(random_chance){
 				var new_bug = Math.floor(Math.random()*900) + 100;
 				
 				while(!jQuery.inArray(new_bug, bugs) == -1){
@@ -72,4 +72,9 @@ function isPrime(n) {
 
    return isPrime;
 
+}
+
+function random_chance(){
+	var randomNumber = Math.random() >= 0.5;
+	console.log(randomNumber);
 }

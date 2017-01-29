@@ -26,11 +26,14 @@ $(document).ready(function(){
 				}
 				
 				bugs.push(new_bug);
+				
+				console.log(bugs.length);
+				
 				$('body').append('Bug #' + new_bug + ': <input id="toggle-' + bugs[i] + '" class="bug" type="checkbox" data-toggle="toggle"><br>');
 				$('.bug').bootstrapToggle();
 			}
 			
-			if(!$('.bug:checked').length){
+			if($('.bug:checked').length === 0){
 				alert("WINNER!");
 				location.reload();
 			}

@@ -86,7 +86,7 @@ function watch_for_toggles(){
 				}
 				
 				bugs.push(new_bug);
-				$('body').append('Bug #' + new_bug + ': <input id="toggle-' + new_bug + '" class="bug" type="checkbox" data-toggle="toggle"><br>');
+				$('body').append('<div class="bug-div">Bug #' + new_bug + ': <input id="toggle-' + new_bug + '" class="bug" type="checkbox" data-toggle="toggle"></div>');
 				$('.bug').bootstrapToggle();
 				watch_for_toggles();
 			}

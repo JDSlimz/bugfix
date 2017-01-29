@@ -64,6 +64,9 @@ function activate_more_bugs(){
 	for(var i=0; i<num_to_activate; i++){
 		var bug_to_activate = Math.floor(Math.random()*bugs.length);
 		$('#toggle-'+bugs[bug_to_activate]).bootstrapToggle('on');
+		
+		console.log(num_to_activate);
+		console.log(bug_to_activate);
 	}
 }
 

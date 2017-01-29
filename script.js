@@ -14,8 +14,6 @@ $(document).ready(function(){
 	//watch for toggles
 	$('.bug').change(function() {
 		
-		
-		
 		if(!$(this).prop('checked')){
 			activate_more_bugs();
 			clicks++;
@@ -31,12 +29,14 @@ $(document).ready(function(){
 				$('body').append('Bug #' + new_bug + ': <input id="toggle-' + bugs[i] + '" class="bug" type="checkbox" data-toggle="toggle"><br>');
 				$('.bug').bootstrapToggle();
 			}
+			
+			if(!$('.bug:checked').length){
+				alert("WINNER!");
+				location.reload();
+			}
 		}
 		
-		if(!$('.bug:checked').length){
-			alert("WINNER!");
-			location.reload();
-		}
+		
     })
 });
 

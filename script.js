@@ -11,36 +11,7 @@ $(document).ready(function(){
 	
 	add_elements();
 	
-	//watch for toggles
-	$('.bug').change(function() {
-		
-		if(!$(this).prop('checked')){
-			activate_more_bugs();
-			clicks++;
-			
-			if(random_chance() && bugs.length < 16){
-				var new_bug = Math.floor(Math.random()*900) + 100;
-				
-				while(!jQuery.inArray(new_bug, bugs) == -1){
-					new_bug = Math.floor(Math.random()*900) + 100;
-				}
-				
-				bugs.push(new_bug);
-				
-				console.log(bugs.length);
-				
-				$('body').append('Bug #' + new_bug + ': <input id="toggle-' + bugs[i] + '" class="bug" type="checkbox" data-toggle="toggle"><br>');
-				$('.bug').bootstrapToggle();
-			}
-			
-			if($('.bug:checked').length === 0){
-				alert("WINNER!");
-				location.reload();
-			}
-		}
-		
-		
-    })
+	watch_for_toggles();
 });
 
 function add_elements(){
@@ -94,4 +65,35 @@ function random_chance(){
 		chance = true;
 	}
 	return chance;
+}
+
+function watch_for_toggles(){
+	//watch for toggles
+	$('.bug').change(function() {
+		
+		if(!$(this).prop('checked')){
+			activate_more_bugs();
+			clicks++;
+			
+			if(random_chance() && bugs.length < 16){
+				var new_bug = Math.floor(Math.random()*900) + 100;
+				
+				while(!jQuery.inArray(new_bug, bugs) == -1){
+					new_bug = Math.floor(Math.random()*900) + 100;
+				}
+				
+				bugs.push(new_bug);
+				$('body').append('Bug #' + new_bug + ': <input id="toggle-' + bugs[i] + '" class="bug" type="checkbox" data-toggle="toggle"><br>');
+				$('.bug').bootstrapToggle();
+				watch_for_toggles();
+			}
+			
+			if($('.bug:checked').length === 0){
+				alert("WINNER!");
+				location.reload();
+			}
+		}
+		
+		
+    });
 }

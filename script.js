@@ -14,11 +14,11 @@ $(document).ready(function(){
 	//watch for toggles
 	$('.bug').change(function() {
 		clicks++;
-		
+		console.log(isPrime(clicks));
 		if(isPrime(clicks)){
 			var new_bug = Math.floor(Math.random()*900) + 100;
-			console.log(jQuery.inArray(new_bug, bugs));
-			if(!jQuery.inArray(new_bug, bugs)){
+			
+			while(!jQuery.inArray(new_bug, bugs) == -1){
 				console.log(new_bug);
 			}
 		}

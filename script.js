@@ -9,6 +9,15 @@ $(document).ready(function(){
 	}
 	
 	add_elements();
+	
+	//watch for toggles
+	$('.bug').change(function() {
+		
+		if($(this).prop('checked')){
+			console.log(this.id);
+		}
+		
+    })
 });
 
 function add_elements(){

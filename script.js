@@ -30,18 +30,26 @@ function select_starting_bug(){
 }
 
 function activate_more_bugs(not_to_activate){
-	var num_to_activate = Math.floor(Math.random()*2);
+	var bug_number = not_to_activate.slice(7,10);
+	var bug_index = bugs.indexOf(bug_number);
+	var num_to_activate;
+	
+	if(clicks <=5){
+		num_to_activate = Math.floor(Math.random()*2)+1;
+	} else {
+		num_to_activate = Math.floor(Math.random()*2);
+	}
 	
 	if(num_to_activate == 1){
 		var which = Math.floor(Math.random()*1);
 		if(which == 0){
-			$('#toggle-'+bugs[not_to_activate - 1]).bootstrapToggle('on');
+			$('#toggle-'+bugs[bug_index - 1]).bootstrapToggle('on');
 		} else if(which == 1){
-			$('#toggle-'+bugs[not_to_activate + 1]).bootstrapToggle('on');
+			$('#toggle-'+bugs[bug_index + 1]).bootstrapToggle('on');
 		}
 	} else if(num_to_activate == 2){
-		$('#toggle-'+bugs[not_to_activate - 1]).bootstrapToggle('on');
-		$('#toggle-'+bugs[not_to_activate + 1]).bootstrapToggle('on');
+		$('#toggle-'+bugs[bug_index - 1]).bootstrapToggle('on');
+		$('#toggle-'+bugs[bug_index + 1]).bootstrapToggle('on');
 	}
 }
 
@@ -90,7 +98,7 @@ function watch_for_toggles(){
 				watch_for_toggles();
 			}
 			
-			if($('.bug:checked').length === 0){
+			if($('.bug:checked').length === 0 && clicks){
 				alert("WINNER!");
 				location.reload();
 			}

@@ -34,7 +34,7 @@ function activate_more_bugs(not_to_activate){
 	var bug_index = bugs.indexOf(bug_number);
 	var num_to_activate;
 	
-	if(clicks <=5){
+	if(clicks <= 5){
 		num_to_activate = Math.floor(Math.random()*2)+1;
 	} else {
 		num_to_activate = Math.floor(Math.random()*2);
@@ -98,7 +98,7 @@ function watch_for_toggles(){
 				watch_for_toggles();
 			}
 			
-			if($('.bug:checked').length === 0 && clicks){
+			if($('.bug:checked').length === 0){
 				alert("WINNER!");
 				location.reload();
 			}

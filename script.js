@@ -30,19 +30,18 @@ function select_starting_bug(){
 }
 
 function activate_more_bugs(not_to_activate){
-	var num_to_activate = Math.floor(Math.random()*3);
+	var num_to_activate = Math.floor(Math.random()*2);
 	
-	for(var i=0; i<num_to_activate; i++){
-		
-		var bug_to_activate = Math.floor(Math.random()*bugs.length);
-		
-		console.log("toggle-"+bugs[bug_to_activate]);
-		console.log(not_to_activate);
-		
-		while("toggle-"+bugs[bug_to_activate] == not_to_activate){
-			bug_to_activate = Math.floor(Math.random()*bugs.length);
+	if(num_to_activate == 1){
+		var which = Math.floor(Math.random()*1);
+		if(which == 0){
+			$('#toggle-'+bugs[not_to_activate - 1]).bootstrapToggle('on');
+		} else if(which == 1){
+			$('#toggle-'+bugs[not_to_activate + 1]).bootstrapToggle('on');
 		}
-		$('#toggle-'+bugs[bug_to_activate]).bootstrapToggle('on');
+	} else if(num_to_activate == 2){
+		$('#toggle-'+bugs[not_to_activate - 1]).bootstrapToggle('on');
+		$('#toggle-'+bugs[not_to_activate + 1]).bootstrapToggle('on');
 	}
 }
 

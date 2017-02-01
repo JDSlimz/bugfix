@@ -45,6 +45,7 @@ function activate_more_bugs(not_to_activate){
 	
 	if(num_to_activate == 1){
 		var which = Math.floor(Math.random()*1);
+		mobileConsole(which);
 		if(which == 0){
 			$('#toggle-'+bugs[bug_index - 1]).bootstrapToggle('on');
 		} else if(which == 1){
@@ -112,5 +113,5 @@ function watch_for_toggles(){
 }
 
 function mobileConsole(msg){
-	$('#console').append(msg);
+	$('#console').html(msg);
 }

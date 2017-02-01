@@ -32,6 +32,8 @@ function select_starting_bug(){
 function activate_more_bugs(not_to_activate){
 	var bug_number = not_to_activate.slice(7,10);
 	var bug_index = bugs.indexOf(bug_number);
+	mobileConsole(bug_number);
+	mobileConsole(bug_index);
 	var num_to_activate;
 	
 	if(clicks <= 5){
@@ -54,13 +56,13 @@ function activate_more_bugs(not_to_activate){
 }
 
 function isPrime(n) {
-   if (n < 2) {return false}
-   if (n != Math.round(n)) {return false}
+   if (n < 2) {return false;}
+   if (n != Math.round(n)) {return false;}
 
    var isPrime = true;
 
    for (var i = 2; i <= Math.sqrt(n); i++) {
-      if (n % i == 0) {isPrime = false}
+      if (n % i == 0) {isPrime = false;}
    }
 
    return isPrime;
@@ -106,4 +108,8 @@ function watch_for_toggles(){
 		
 		
     });
+}
+
+function mobileConsole(msg){
+	$('#console').append(msg);
 }

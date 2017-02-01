@@ -54,6 +54,9 @@ function activate_more_bugs(not_to_activate){
 	} else if(num_to_activate == 2){
 		$('#toggle-'+bugs[bug_index - 1]).bootstrapToggle('on');
 		$('#toggle-'+bugs[bug_index + 1]).bootstrapToggle('on');
+	} else if($('.bug:checked').length === 0 && num_to_activate === 0){
+		alert("WINNER!");
+		location.reload();
 	}
 }
 
@@ -100,11 +103,6 @@ function watch_for_toggles(){
 				$('body').append('<div class="bug-div">Bug #' + new_bug + ': <input id="toggle-' + new_bug + '" class="bug" type="checkbox" data-toggle="toggle"></div>');
 				$('.bug').bootstrapToggle();
 				watch_for_toggles();
-			}
-			
-			if($('.bug:checked').length === 0){
-				alert("WINNER!");
-				location.reload();
 			}
 		}
 		

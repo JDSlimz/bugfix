@@ -31,10 +31,10 @@ function select_starting_bug(){
 
 function activate_more_bugs(not_to_activate){
 	var bug_number = not_to_activate.slice(7,10);
-	var bug_index = bugs.indexOf(bug_number);
-	mobileConsole(not_to_activate);
-	mobileConsole(bug_number);
-	mobileConsole(bug_index);
+	var bug_index = bugs.indexOf(parseInt(bug_number));
+	mobileConsole(not_to_activate + "<br>");
+	mobileConsole(bug_number + "<br>");
+	mobileConsole(bug_index + "<br>");
 	var num_to_activate;
 	
 	if(clicks <= 5){

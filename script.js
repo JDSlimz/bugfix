@@ -42,10 +42,10 @@ function activate_more_bugs(not_to_activate){
 	} else {
 		num_to_activate = Math.floor(Math.random()*2);
 	}
-	mobileConsole("number to activate. " + num_to_activate + "<br>");
+	//mobileConsole("number to activate. " + num_to_activate + "<br>");
 	if(num_to_activate == 1){
 		var which = Math.round(Math.random());
-		mobileConsole("which " + which + "<br>");
+		//mobileConsole("which " + which + "<br>");
 		if(which == 0){
 			$('#toggle-'+bugs[bug_index - 1]).bootstrapToggle('on');
 		} else if(which == 1){

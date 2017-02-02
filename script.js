@@ -106,10 +106,11 @@ function mobileConsole(msg){
 
 function win(){
 	$("#clicks").html(clicks);
-	$("#winModal").show();
+	$("#winModal").modal("show");
 }
 
 function reset(){
+	$("body").html("");
 	var i = 0;
 	while(i < 8){
 		bugs.push(Math.floor(Math.random()*900) + 100);

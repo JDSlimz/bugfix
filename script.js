@@ -2,16 +2,7 @@ var bugs = [];
 var clicks = 0;
 
 $(document).ready(function(){
-	
-	var i = 0;
-	while(i < 8){
-		bugs.push(Math.floor(Math.random()*900) + 100);
-		i++;
-	}
-	
-	add_elements();
-	
-	watch_for_toggles();
+	reset();
 });
 
 function add_elements(){
@@ -55,8 +46,7 @@ function activate_more_bugs(not_to_activate){
 		$('#toggle-'+bugs[bug_index - 1]).bootstrapToggle('on');
 		$('#toggle-'+bugs[bug_index + 1]).bootstrapToggle('on');
 	} else if($('.bug:checked').length === 0 && num_to_activate === 0){
-		alert("WINNER!");
-		location.reload();
+		win();
 	}
 }
 
@@ -112,4 +102,21 @@ function watch_for_toggles(){
 
 function mobileConsole(msg){
 	$('#console').append(msg);
+}
+
+function win(){
+	$("#clicks").html(clicks);
+	$("#winModal").show();
+}
+
+function reset(){
+	var i = 0;
+	while(i < 8){
+		bugs.push(Math.floor(Math.random()*900) + 100);
+		i++;
+	}
+	
+	add_elements();
+	
+	watch_for_toggles();
 }

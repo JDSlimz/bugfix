@@ -79,21 +79,22 @@ function watch_for_toggles(){
 	$('.bug').change(function() {
 		
 		if(!$(this).prop('checked')){
-			activate_more_bugs(this.id);
 			clicks++;
+			activate_more_bugs(this.id);
+			
 			$('#clicksFront').html(clicks);
-			if(random_chance() && bugs.length < 16){
-				var new_bug = Math.floor(Math.random()*900) + 100;
-				
-				while(!jQuery.inArray(new_bug, bugs) == -1){
-					new_bug = Math.floor(Math.random()*900) + 100;
-				}
-				
-				bugs.push(new_bug);
-				$('#bugs').append('<div class="bug-div">Bug #' + new_bug + ': <input id="toggle-' + new_bug + '" class="bug" type="checkbox" data-toggle="toggle"></div>');
-				$('.bug').bootstrapToggle();
-				watch_for_toggles();
-			}
+//			if(random_chance() && bugs.length < 16){
+//				var new_bug = Math.floor(Math.random()*900) + 100;
+//				
+//				while(!jQuery.inArray(new_bug, bugs) == -1){
+//					new_bug = Math.floor(Math.random()*900) + 100;
+//				}
+//				
+//				bugs.push(new_bug);
+//				$('#bugs').append('<div class="bug-div">Bug #' + new_bug + ': <input id="toggle-' + new_bug + '" class="bug" type="checkbox" data-toggle="toggle"></div>');
+//				$('.bug').bootstrapToggle();
+//				watch_for_toggles();
+//			}
 		}
 		
 		
@@ -114,6 +115,7 @@ function reset_game(){
 	clicks = 0;
 	$('#clicksFront').html(clicks);
 	bugs = [];
+	
 	var i = 0;
 	while(i < 8){
 		bugs.push(Math.floor(Math.random()*900) + 100);

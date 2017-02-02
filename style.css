@@ -1,7 +1,7 @@
 html{
   height 100%;
 }
-body{
+body, #bugs{
     height: 100%;
 	display: flex;
     flex-direction: column;

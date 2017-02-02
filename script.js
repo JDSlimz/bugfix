@@ -2,7 +2,7 @@ var bugs = [];
 var clicks = 0;
 
 $(document).ready(function(){
-	reset();
+	reset_game();
 });
 
 function add_elements(){
@@ -109,7 +109,7 @@ function win(){
 	$("#winModal").modal("show");
 }
 
-function reset(){
+function reset_game(){
 	$("#bugs").html("");
 	clicks = 0;
 	bugs = [];

@@ -111,6 +111,7 @@ function win(){
 
 function reset(){
 	$("#bugs").html("");
+	clicks = 0;
 	bugs = [];
 	var i = 0;
 	while(i < 8){

@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 function add_elements(){
 	for (var i = 0; i < bugs.length; i++) {
-		$('body').append('<div class="bug-div">Bug #' + bugs[i] + ': <input id="toggle-' + bugs[i] + '" class="bug" type="checkbox" data-toggle="toggle"></div>');
+		$('#bugs').append('<div class="bug-div">Bug #' + bugs[i] + ': <input id="toggle-' + bugs[i] + '" class="bug" type="checkbox" data-toggle="toggle"></div>');
 	}
 	
 	$('.bug').bootstrapToggle();
@@ -90,7 +90,7 @@ function watch_for_toggles(){
 				}
 				
 				bugs.push(new_bug);
-				$('body').append('<div class="bug-div">Bug #' + new_bug + ': <input id="toggle-' + new_bug + '" class="bug" type="checkbox" data-toggle="toggle"></div>');
+				$('#bugs').append('<div class="bug-div">Bug #' + new_bug + ': <input id="toggle-' + new_bug + '" class="bug" type="checkbox" data-toggle="toggle"></div>');
 				$('.bug').bootstrapToggle();
 				watch_for_toggles();
 			}
@@ -110,7 +110,7 @@ function win(){
 }
 
 function reset(){
-	$("body").html("");
+	$("#bugs").html("");
 	var i = 0;
 	while(i < 8){
 		bugs.push(Math.floor(Math.random()*900) + 100);

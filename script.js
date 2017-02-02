@@ -112,6 +112,7 @@ function win(){
 function reset_game(){
 	$("#bugs").html("");
 	clicks = 0;
+	$('#clicksFront').html(clicks);
 	bugs = [];
 	var i = 0;
 	while(i < 8){

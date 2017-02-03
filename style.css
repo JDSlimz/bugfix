@@ -1,4 +1,8 @@
-html, body, #bugs{
+html, body{
+    height: 100%;
+}
+
+#bugs{
     height: 100%;
     display: flex;
     flex-direction: column;

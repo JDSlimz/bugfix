@@ -117,7 +117,7 @@ function reset_game(){
 	bugs = [];
 	
 	var i = 0;
-	while(i < 8){
+	while(i < 10){
 		bugs.push(Math.floor(Math.random()*900) + 100);
 		i++;
 	}

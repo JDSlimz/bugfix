@@ -43,8 +43,8 @@ function activate_more_bugs(not_to_activate){
 			$('#toggle-'+bugs[bug_index + 1]).bootstrapToggle('on');
 		}
 	} else if(num_to_activate == 2){
-		$('#toggle-'+bugs[bug_index - 1]).bootstrapToggle('on');
-		$('#toggle-'+bugs[bug_index + 1]).bootstrapToggle('on');
+		$('#toggle-'+bugs[(bugs.length + bug_index - 1) % bugs.length]).bootstrapToggle('on');
+		$('#toggle-'+bugs[(bug_index + 1) % bugs.length]).bootstrapToggle('on');
 	} else if($('.bug:checked').length === 0 && num_to_activate === 0){
 		win();
 	}
